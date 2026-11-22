@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بروبوزال تأسيس التواجد الرقمي والتجاري | شركة المهند العربي للصناعة × KAAF Group</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Cairo & IBM Plex Sans Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kaaf: {
+                            blue: '#0A4C86',
+                            blueLight: '#1C75C8',
+                            blueDeep: '#05233E',
+                            green: '#00875A',
+                            greenLight: '#00B377',
+                            gold: '#D4AF37',
+                            goldLight: '#F5DE88',
+                            purple: '#7C3AED',
+                            purpleLight: '#A78BFA',
+                            rose: '#E11D48',
+                            roseLight: '#FB7185',
+                            cyan: '#06B6D4',
+                            cyanLight: '#67E8F9',
+                            amber: '#F59E0B',
+                            dark: '#040912',
+                            darkSlate: '#091322',
+                            cardBg: '#0D1C30',
+                            border: '#1E3554'
+                        },
+                        ind: {
+                            steel: '#38BDF8',
+                            copper: '#F59E0B',
+                            emerald: '#10B981',
+                            titanium: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        ibm: ['IBM Plex Sans Arabic', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow-blue': '0 0 35px -5px rgba(10, 76, 134, 0.65)',
+                        'glow-gold': '0 0 35px -5px rgba(245, 158, 11, 0.5)',
+                        'glow-cyan': '0 0 35px -5px rgba(56, 189, 248, 0.5)',
+                        'glow-green': '0 0 35px -5px rgba(16, 185, 129, 0.5)',
+                        'web-card': '0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #040912;
+            color: #E2E8F0;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #interactive-bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.65;
+        }
+
+        .industrial-ribbon {
+            background: linear-gradient(90deg, 
+                #0A4C86 0%, 
+                #38BDF8 25%, 
+                #F59E0B 50%, 
+                #10B981 75%, 
+                #0A4C86 100%
+            );
+            height: 4px;
+        }
+
+        .web-card-blue {
+            background: linear-gradient(135deg, rgba(12, 32, 60, 0.88) 0%, rgba(5, 15, 30, 0.96) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .web-card-blue:hover {
+            border-color: rgba(56, 189, 248, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px -10px rgba(10, 76, 134, 0.55);
+        }
+
+        .web-card-amber {
+            background: linear-gradient(135deg, rgba(44, 30, 12, 0.88) 0%, rgba(18, 13, 6, 0.96) 100%);
+            border: 1px solid rgba(245, 158, 11, 0.4);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .web-card-amber:hover {
+            border-color: rgba(245, 158, 11, 0.85);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px -10px rgba(245, 158, 11, 0.45);
+        }
+
+        .web-card-green {
+            background: linear-gradient(135deg, rgba(8, 38, 28, 0.88) 0%, rgba(4, 20, 15, 0.96) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .web-card-green:hover {
+            border-color: rgba(16, 185, 129, 0.8);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 35px -10px rgba(16, 185, 129, 0.45);
+        }
+
+        .web-card-purple {
+            background: linear-gradient(135deg, rgba(28, 18, 54, 0.88) 0%, rgba(12, 8, 26, 0.96) 100%);
+            border: 1px solid rgba(167, 139, 250, 0.35);
+            backdrop-filter: blur(14px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes float-brand {
+            0%, 100% { transform: translateY(0px); box-shadow: 0 10px 25px -5px rgba(10, 76, 134, 0.6); }
+            50% { transform: translateY(-7px); box-shadow: 0 18px 30px -5px rgba(10, 76, 134, 0.85); }
+        }
+        @keyframes float-wa {
+            0%, 100% { transform: translateY(0px) scale(1); box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5); }
+            50% { transform: translateY(-7px) scale(1.03); box-shadow: 0 18px 30px -5px rgba(37, 211, 102, 0.8); }
+        }
+
+        .anim-float-brand { animation: float-brand 4s ease-in-out infinite; }
+        .anim-float-wa { animation: float-wa 4s ease-in-out infinite 0.5s; }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.2s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: #F59E0B;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        @media print {
+            body { background-color: #fff !important; color: #111 !important; }
+            #interactive-bg-canvas, aside, header, #floating-kaaf-btn, #floating-wa-btn { display: none !important; }
+            .web-card-blue, .web-card-amber, .web-card-green, .web-card-purple {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                color: #0f172a !important;
+                box-shadow: none !important;
+            }
+            .text-white { color: #0f172a !important; }
+            .text-gray-200, .text-gray-300, .text-gray-400 { color: #334155 !important; }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-ind-copper selection:text-slate-950">
+
+    <!-- Interactive Ambient Canvas Layer -->
+    <canvas id="interactive-bg-canvas"></canvas>
+
+    <!-- Floating KAAF Logo (Bottom Left) -->
+    <aside id="floating-kaaf-btn" class="fixed bottom-6 left-6 z-50">
+        <a href="https://kaafmarketing.sa/" target="_blank" rel="noopener noreferrer" title="مجموعة كاف | KAAF Group" class="block w-14 h-14 rounded-full overflow-hidden border-2 border-ind-steel/80 p-0.5 bg-black/90 anim-float-brand transition-all hover:scale-110 group backdrop-blur-md">
+            <img src="https://i.ibb.co/qLQcG9vr/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAAF Group Logo" class="w-full h-full object-cover rounded-full" onerror="this.src='https://placehold.co/100x100/0A4C86/ffffff?text=KAAF'">
+        </a>
+    </aside>
+
+    <!-- Floating WhatsApp CTA (Bottom Right) -->
+    <aside id="floating-wa-btn" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/966537553910" target="_blank" rel="noopener noreferrer" title="التواصل المباشر مع مستشار تطوير الأعمال الصناعية (+966 53 755 3910)" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center border-2 border-emerald-200/80 anim-float-wa transition-all hover:scale-110 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+    </aside>
+
+    <!-- Document Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-kaaf-dark/90 backdrop-blur-xl border-b border-kaaf-border/80 px-4 lg:px-12 py-3.5 transition-all">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo & Proposal Identity (Right in RTL) -->
+            <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-2xl overflow-hidden border border-ind-steel/50 p-0.5 bg-black shrink-0 shadow-glow-blue">
+                    <img src="https://i.ibb.co/qLQcG9vr/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAAF Group Logo" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/0A4C86/ffffff?text=KAAF'">
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-base font-black text-white tracking-wide font-ibm">KAAF Group</span>
+                        <span class="px-2.5 py-0.5 rounded-full bg-ind-copper/20 text-amber-300 text-[10px] font-extrabold border border-ind-copper/40">عرض خاص: المهند العربي للصناعة</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium">منظومة تأسيس الحضور الرقمي والتسويقي والتجاري</p>
+                </div>
+            </div>
+
+            <!-- Anchor Links -->
+            <nav class="hidden lg:flex items-center gap-4 text-xs font-bold text-slate-300">
+                <a href="#intro" class="nav-link hover:text-white">المقدمة الاستراتيجية</a>
+                <a href="#website" class="nav-link hover:text-white">1. الموقع الإلكتروني</a>
+                <a href="#social" class="nav-link hover:text-white">2. التواصل الاجتماعي</a>
+                <a href="#ads" class="nav-link hover:text-white">3. الحملات الإعلانية</a>
+                <a href="#sales" class="nav-link hover:text-white text-amber-300"><i class="fa-solid fa-users-gear text-xs ml-1"></i> 4. فريق المبيعات</a>
+                <a href="#synergy" class="nav-link hover:text-white">تكامل المنظومة</a>
+                <a href="#vision" class="nav-link hover:text-white text-emerald-400">الرؤية المستقبلية</a>
+            </nav>
+
+            <!-- WhatsApp Action Button (Left in RTL) -->
+            <div class="flex items-center gap-2 order-last">
+                <a href="https://wa.me/966537553910" target="_blank" class="px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-1.5 transition">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>تواصل معنا</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Document Content Container -->
+    <main class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-20">
+
+        <!-- ========================================================================= -->
+        <!-- 00 — PROPOSAL HERO BANNER / COVER                                         -->
+        <!-- ========================================================================= -->
+        <section class="relative rounded-[32px] overflow-hidden p-8 sm:p-14 lg:p-16 bg-gradient-to-br from-kaaf-blueDeep/95 via-kaaf-darkSlate/95 to-kaaf-dark/95 border border-ind-steel/40 shadow-web-card text-white backdrop-blur-lg">
+            <div class="industrial-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ind-copper/20 border border-ind-copper/40 text-amber-300 text-xs font-bold font-ibm">
+                        <i class="fa-solid fa-industry text-ind-copper"></i>
+                        <span>وثيقة العرض الفني والتجاري المتكامل • Industrial Digital & Sales Ecosystem</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <span class="text-xs sm:text-sm font-bold text-sky-300/80 block tracking-wider uppercase font-ibm">From Zero Digital Footprint to Industrial Market Leadership</span>
+                        <h1 class="text-3xl sm:text-5xl font-black text-white leading-tight tracking-tight">
+                            بناء وتطوير التواجد الرقمي والتسويقي والتجاري لشركة <br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-l from-ind-steel via-sky-200 to-ind-copper font-ibm">
+                                المهند العربي للصناعة
+                            </span>
+                        </h1>
+                        <p class="text-sm sm:text-base font-bold text-amber-100/95 font-cairo leading-relaxed max-w-3xl border-r-4 border-ind-copper pr-4 py-2 bg-black/45 rounded-l-2xl">
+                            من كيان صناعي بلا حضور رقمي إلى علامة تجارية صناعية ذات حضور احترافي ومنظومة متكاملة لجذب العملاء وإدارة المبيعات.
+                        </p>
+                    </div>
+
+                    <!-- Meta Tags -->
+                    <div class="pt-2 grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                        <div class="p-3 rounded-2xl bg-black/60 border border-white/10">
+                            <span class="text-slate-400 block text-[11px]">مقدم العرض</span>
+                            <span class="font-black text-white font-ibm">KAAF Group</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/60 border border-ind-copper/40">
+                            <span class="text-slate-400 block text-[11px]">الجهة المستهدفة</span>
+                            <span class="font-black text-amber-300 font-ibm">المهند العربي للصناعة</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/60 border border-ind-steel/40">
+                            <span class="text-slate-400 block text-[11px]">طبيعة المشروع</span>
+                            <span class="font-black text-ind-steel">تأسيس شامل من الصفر</span>
+                        </div>
+                        <div class="p-3 rounded-2xl bg-black/60 border border-ind-emerald/40">
+                            <span class="text-slate-400 block text-[11px]">الركائز الأربع</span>
+                            <span class="font-black text-ind-emerald">موقع + محتوى + إعلانات + مبيعات</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industrial Brand Identity & Production Line Visual Showcase (5 Cols) -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="w-full space-y-4 p-6 rounded-3xl bg-kaaf-cardBg/95 border border-ind-steel/40 shadow-2xl backdrop-blur-md">
+                        <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                            <span class="text-xs font-black text-white flex items-center gap-2">
+                                <i class="fa-solid fa-gears text-ind-copper"></i>
+                                <span>شراكة التحول الصناعي والتجاري</span>
+                            </span>
+                            <span class="text-[10px] text-ind-steel font-mono font-bold">B2B INDUSTRIAL</span>
+                        </div>
+
+                        <!-- Brand Identity Box -->
+                        <div class="p-4 rounded-2xl bg-black/70 border border-ind-steel/30 flex items-center justify-around gap-3">
+                            <div class="text-center space-y-1">
+                                <div class="w-16 h-16 rounded-2xl border-2 border-ind-copper/70 bg-gradient-to-br from-slate-900 to-kaaf-blueDeep mx-auto shadow-md flex flex-col items-center justify-center text-amber-300">
+                                    <i class="fa-solid fa-industry text-2xl"></i>
+                                </div>
+                                <span class="text-[11px] font-black text-amber-300 block font-ibm">المهند العربي للصناعة</span>
+                            </div>
+                            <div class="text-ind-copper text-lg font-mono font-bold">✕</div>
+                            <div class="text-center space-y-1">
+                                <div class="w-16 h-16 rounded-2xl overflow-hidden border border-kaaf-blueLight/50 p-0.5 bg-black mx-auto shadow-md">
+                                    <img src="https://i.ibb.co/qLQcG9vr/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAAF Group" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/0A4C86/ffffff?text=KAAF'">
+                                </div>
+                                <span class="text-[11px] font-bold text-slate-300 block font-ibm">KAAF Group</span>
+                            </div>
+                        </div>
+
+                        <!-- Realistic Industrial Production Line Visual -->
+                        <div class="relative rounded-2xl overflow-hidden border border-ind-steel/30 h-32 group">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/600x250/0D1C30/38BDF8?text=Al+Muhand+Al+Arabi+Industrial'" alt="خطوط إنتاج ومصانع حديثة" class="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent flex items-end p-3">
+                                <div class="text-xs">
+                                    <span class="font-bold text-ind-steel block">إبراز القدرات الإنتاجية والهندسية</span>
+                                    <span class="text-[10px] text-slate-200">واجهة رقمية تليق بحجم المصنع وتستقطب كبار العملاء</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#synergy" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-kaaf-blue via-ind-steel to-ind-copper text-slate-950 font-black text-xs text-center block hover:brightness-110 transition shadow-md">
+                            استعراض خارطة المنظومة المتكاملة (4 ركائز)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 01 — STRATEGIC INTRODUCTION: WHY THIS ECOSYSTEM IS CRITICAL               -->
+        <!-- ========================================================================= -->
+        <section id="intro" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-steel/20 text-ind-steel font-black text-xs border border-ind-steel/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-compass text-[11px]"></i>
+                    <span>ثالثاً • المقدمة الاستراتيجية</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-shield-halved text-ind-steel text-xl"></i>
+                    <span>لماذا تحتاج شركة المهند العربي للصناعة إلى هذه المنظومة الآن؟</span>
+                </h2>
+            </div>
+
+            <div class="web-card-blue rounded-3xl p-6 sm:p-10 space-y-6 border-2 border-ind-steel/40 shadow-web-card">
+                <p class="text-base sm:text-lg text-slate-100 leading-relaxed font-medium">
+                    تمتلك <strong>شركة المهند العربي للصناعة</strong> نشاطاً صناعياً قائماً وقدرات تشغيلية حقيقية؛ إلا أن غياب التواجد الإلكتروني والتسويقي المتكامل في بيئة الأعمال الحديثة يخلق فجوة بين <strong>قوة المصنع على أرض الواقع</strong> وبين <strong>الصورة التي يراها العملاء والشركات والموردون</strong> عند البحث عن شركاء صناعيين.
+                </p>
+
+                <!-- 5 Risks of Having Zero Digital Footprint -->
+                <div class="space-y-3">
+                    <h3 class="text-sm font-black text-amber-300 flex items-center gap-2">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>تحديات ومخاطر غياب الموقع الإلكتروني والحضور الرقمي للشركات الصناعية:</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+                        <div class="p-4 rounded-2xl bg-black/50 border border-rose-500/30 space-y-1.5">
+                            <span class="font-bold text-rose-300 flex items-center gap-2"><i class="fa-solid fa-eye-slash"></i> 1. صعوبة وصول العملاء الجدد</span>
+                            <p class="text-slate-300 leading-relaxed">تعذّر عثور الشركات والمشاريع الباحثة عن حلول أو منتجات صناعية على شركتكم والتعرف على نشاطها.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-black/50 border border-rose-500/30 space-y-1.5">
+                            <span class="font-bold text-rose-300 flex items-center gap-2"><i class="fa-solid fa-building-circle-xmark"></i> 2. غياب الواجهة الرسمية</span>
+                            <p class="text-slate-300 leading-relaxed">عدم وجود مقر رقمي رسمي يعرض قدرات المصنع ومنتجاته وخدماته بصورة منظمة تليق بحجم العمل.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-black/50 border border-rose-500/30 space-y-1.5">
+                            <span class="font-bold text-rose-300 flex items-center gap-2"><i class="fa-solid fa-arrow-trend-down"></i> 3. فقدان فرص تجارية محتملة</span>
+                            <p class="text-slate-300 leading-relaxed">تحوّل صفقات وعقود توريد واعدة إلى منافسين يمتلكون حضوراً رقمياً أوضح وأسهل في الوصول والتواصل.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-black/50 border border-rose-500/30 space-y-1.5">
+                            <span class="font-bold text-rose-300 flex items-center gap-2"><i class="fa-solid fa-handshake-slash"></i> 4. صعوبة بناء الثقة الفورية</span>
+                            <p class="text-slate-300 leading-relaxed">أصحاب المشاريع ومديرو المشتريات يراجعون الموقع وحسابات الشركة كخطوة أولى للتحقق من الموثوقية قبل التعاقد.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-black/50 border border-rose-500/30 space-y-1.5 sm:col-span-2">
+                            <span class="font-bold text-rose-300 flex items-center gap-2"><i class="fa-solid fa-diagram-next"></i> 5. الاعتماد على قنوات تقليدية محدودة</span>
+                            <p class="text-slate-300 leading-relaxed">انحصار التوسع في دائرة العلاقات الحالية فقط دون امتلاك محرك رقمي وتجاري يفتح أسواقاً وشرائح عملاء جديدة باستمرار.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goal of Collaboration -->
+                <div class="p-5 rounded-2xl bg-gradient-to-r from-kaaf-blueDeep/80 to-black/80 border border-ind-steel/40 text-xs sm:text-sm text-sky-100 leading-relaxed flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-ind-emerald text-lg mt-0.5 shrink-0"></i>
+                    <div>
+                        <strong class="text-white block mb-1">الهدف الاستراتيجي من التعاون:</strong>
+                        تأسيس بنية رقمية وتجارية متكاملة من الصفر تساعد <strong>شركة المهند العربي للصناعة</strong> على الانتقال إلى مرحلة أكثر تنظيماً واحترافية في التسويق وإدارة المبيعات، وربط قدراتها الصناعية بالطلب الفعلي في السوق.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 02 — SERVICE 1: PROFESSIONAL CORPORATE WEBSITE                            -->
+        <!-- ========================================================================= -->
+        <section id="website" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-steel/20 text-ind-steel font-black text-xs border border-ind-steel/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe text-[11px]"></i>
+                    <span>رابعاً • الخدمة الأولى</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-laptop-code text-ind-steel text-xl"></i>
+                    <span>إنشاء موقع إلكتروني احترافي — المقر الرقمي الرسمي للشركة</span>
+                </h2>
+            </div>
+
+            <div class="web-card-blue rounded-3xl p-6 sm:p-10 space-y-8 border-2 border-ind-steel/40 shadow-web-card">
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
+                    الموقع الإلكتروني ليس مجرد صفحة تعريفية عابرة، بل هو <strong>المقر الرقمي الرسمي الدائم لشركة المهند العربي للصناعة</strong> وواجهتها الموثوقة أمام العملاء، والشركات، والموردين، والجهات التجارية عند التقدم للمناقصات أو إرسال عروض الأسعار.
+                </p>
+
+                <!-- 8 Implementation Stages -->
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black text-white flex items-center gap-2">
+                        <i class="fa-solid fa-bars-progress text-ind-steel"></i>
+                        <span>مراحل تنفيذ الموقع الإلكتروني (8 خطوات هندسية وتقنية):</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">01</span>
+                            <h4 class="font-black text-white">دراسة نشاط الشركة وطبيعة عملها</h4>
+                            <p class="text-slate-300 leading-relaxed">فهم خطوط العمل والمنتجات والحلول الصناعية التي تقدمها الشركة والجمهور المستهدف.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">02</span>
+                            <h4 class="font-black text-white">تصميم واجهة تعكس الهوية الصناعية</h4>
+                            <p class="text-slate-300 leading-relaxed">بناء واجهة مستخدم (UI/UX) قوية ومنظمة تعبر عن الانضباط الصناعي والاحترافية المؤسسية.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">03</span>
+                            <h4 class="font-black text-white">إنشاء صفحات تعريفية بالشركة</h4>
+                            <p class="text-slate-300 leading-relaxed">تخصيص صفحات متكاملة تستعرض نبذة الشركة، رؤيتها، ونشاطها الصناعي بوضوح تام.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">04</span>
+                            <h4 class="font-black text-white">عرض المنتجات والحلول الصناعية</h4>
+                            <p class="text-slate-300 leading-relaxed">تبويب وتنظيم المنتجات والخدمات الصناعية مع إبراز تفاصيلها ومجالات استخدامها.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">05</span>
+                            <h4 class="font-black text-white">صفحة خاصة بمميزات وقدرات الشركة</h4>
+                            <p class="text-slate-300 leading-relaxed">تسليط الضوء على القدرات التشغيلية ونقاط القوة التنافسية التي تميز المهند العربي للصناعة.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">06</span>
+                            <h4 class="font-black text-white">نماذج طلبات الاستفسار وعرض السعر</h4>
+                            <p class="text-slate-300 leading-relaxed">إضافة وسائل التواصل المباشر ونماذج ذكية لاستقبال طلبات التسعير والتوريد من الشركات.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">07</span>
+                            <h4 class="font-black text-white">التوافق الكامل مع جميع الأجهزة</h4>
+                            <p class="text-slate-300 leading-relaxed">تهيئة الموقع ليعمل بسلاسة وسرعة فائقة على الهواتف الذكية والأجهزة اللوحية والكمبيوتر.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-1.5">
+                            <span class="font-mono font-bold text-ind-steel">08</span>
+                            <h4 class="font-black text-white">مراعاة أساسيات السيو (SEO)</h4>
+                            <p class="text-slate-300 leading-relaxed">ضبط البنية الأساسية والعناوين والأوصاف لتسهيل أرشفة الموقع وظهوره في محركات البحث.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Mockup Preview of Proposed Industrial Website + Benefits -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center pt-2">
+                    <!-- Proposed Website Blueprint Mockup -->
+                    <div class="lg:col-span-6 p-5 rounded-3xl bg-black/75 border-2 border-ind-steel/40 space-y-3 shadow-2xl">
+                        <div class="flex items-center justify-between pb-2 border-b border-white/10">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                            </div>
+                            <span class="text-[10px] font-mono text-ind-steel bg-white/5 px-3 py-0.5 rounded-full">تصور بصري لهيكل الموقع المقترح</span>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border border-white/10 bg-kaaf-darkSlate p-4 space-y-3 text-xs">
+                            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                                <span class="font-black text-amber-300">المهند العربي للصناعة</span>
+                                <div class="flex gap-2 text-[10px] text-slate-400">
+                                    <span>الرئيسية</span> • <span>عن الشركة</span> • <span>المنتجات والحلول</span> • <span>طلب عرض سعر</span>
+                                </div>
+                            </div>
+                            <div class="relative rounded-xl overflow-hidden h-28">
+                                <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?auto=format&fit=crop&w=700&q=80" onerror="this.src='https://placehold.co/600x200/0D1C30/38BDF8?text=Industrial+Solutions'" alt="تصور واجهة الموقع الصناعي" class="w-full h-full object-cover opacity-75">
+                                <div class="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-transparent p-3 flex flex-col justify-center">
+                                    <span class="font-black text-white text-xs">حلول صناعية متكاملة بمعايير جودة عالية</span>
+                                    <span class="mt-1.5 inline-block w-fit px-2.5 py-1 rounded bg-ind-copper text-slate-950 font-black text-[10px]">اطلب عرض سعر الآن</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-center text-[10px]">
+                                <div class="p-2 rounded bg-black/50 border border-white/5 text-slate-300">المنتجات الصناعية</div>
+                                <div class="p-2 rounded bg-black/50 border border-white/5 text-slate-300">القدرات والإمكانيات</div>
+                                <div class="p-2 rounded bg-black/50 border border-white/5 text-slate-300">التواصل المباشر</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How the Company Benefits (6 Direct Benefits) -->
+                    <div class="lg:col-span-6 space-y-3">
+                        <h4 class="text-sm font-black text-ind-steel flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>كيف ستستفيد شركة المهند العربي للصناعة فعلياً من الموقع؟</span>
+                        </h4>
+                        <div class="space-y-2 text-xs text-slate-200">
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-clock text-ind-steel"></i>
+                                <span>امتلاك مقر إلكتروني رسمي يعمل على مدار 24 ساعة لاستقبال العملاء.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-magnifying-glass text-ind-steel"></i>
+                                <span>تسهيل وصول الشركات والمستثمرين إلى معلومات المصنع ونشاطه.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-award text-ind-steel"></i>
+                                <span>تعزيز الثقة والمصداقية المؤسسية أمام العملاء وجهات التوريد.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-boxes-stacked text-ind-steel"></i>
+                                <span>عرض المنتجات والخدمات والحلول الصناعية بطريقة احترافية منظمة.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-file-invoice text-ind-steel"></i>
+                                <span>استقبال طلبات الاستفسارات وعروض الأسعار وتوجيهها لإدارة المبيعات.</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-black/45 border border-white/10 flex items-center gap-2.5">
+                                <i class="fa-solid fa-link text-ind-steel"></i>
+                                <span>توفير رابط رسمي معتمد يُرفق في العروض التجارية والمراسلات والحملات.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 03 — SERVICE 2: SOCIAL MEDIA MANAGEMENT                                   -->
+        <!-- ========================================================================= -->
+        <section id="social" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-kaaf-purple/30 text-kaaf-purpleLight font-black text-xs border border-kaaf-purple/50 flex items-center gap-1.5">
+                    <i class="fa-solid fa-share-nodes text-[11px]"></i>
+                    <span>خامساً • الخدمة الثانية</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-hashtag text-kaaf-purpleLight text-xl"></i>
+                    <span>إدارة حسابات التواصل الاجتماعي — بناء حضور رقمي يعكس القوة الصناعية</span>
+                </h2>
+            </div>
+
+            <div class="web-card-purple rounded-3xl p-6 sm:p-10 space-y-8 border-2 border-kaaf-purple/40 shadow-web-card">
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
+                    الهدف من إدارة حسابات التواصل الاجتماعي للشركات الصناعية <strong>ليس مجرد زيادة أرقام المتابعين السطحية</strong>؛ بل بناء حضور رقمي رسمي ومنظم يخدم الأهداف التجارية للشركة، ويعرّف السوق بقدرات <strong>المهند العربي للصناعة</strong>، ويوفر مرجعاً بصرياً حياً يدعم فريق المبيعات أثناء التواصل مع الشركات.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Workflow -->
+                    <div class="p-6 rounded-2xl bg-kaaf-darkSlate/95 border border-kaaf-purple/40 space-y-3">
+                        <h3 class="text-base font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-gears text-kaaf-purpleLight"></i>
+                            <span>آلية العمل في إدارة منصات التواصل:</span>
+                        </h3>
+                        <ul class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>تجهيز وتنظيم الحسابات الرسمية للشركة على المنصات المناسبة لطبيعة السوق.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>وضع استراتيجية محتوى تتوافق مع طبيعة النشاط الصناعي واحتياجات العملاء.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>تصميم منشورات احترافية تعبر عن القوة والجودة والانضباط الصناعي.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>إنتاج محتوى تعريفي بالشركة وخدماتها ومنتجاتها وحلولها الصناعية.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>إبراز مراحل العمل والإنتاج والقدرات التشغيلية (عند توفر المواد المناسبة).</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-check text-kaaf-purpleLight mt-0.5"></i> <span>نشر إنجازات الشركة ومشروعاتها وأعمالها السابقة (عند توفرها) وتنظيم جدول النشر.</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Strategic Benefits -->
+                    <div class="p-6 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/40 space-y-3">
+                        <h3 class="text-base font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-trophy text-ind-steel"></i>
+                            <span>كيف ستستفيد الشركة من إدارة الحسابات؟</span>
+                        </h3>
+                        <ul class="space-y-2 text-xs text-slate-300 leading-relaxed">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-ind-steel mt-0.5"></i> <span>تأسيس هوية رقمية واضحة وموحدة للمهند العربي للصناعة.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-ind-steel mt-0.5"></i> <span>زيادة الوعي بالعلامة التجارية الصناعية لدى الشركات والمقاولين.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-ind-steel mt-0.5"></i> <span>تقديم صورة مؤسسية احترافية تعزز الثقة مع الجهات المستهدفة.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-ind-steel mt-0.5"></i> <span>توفير قناة اتصال مستمرة للتعريف بالمنتجات والحلول الجديدة.</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-ind-steel mt-0.5"></i> <span><strong>دعم جهود فريق المبيعات:</strong> وجود حسابات نشطة ومحتوى احترافي يمكن الرجوع إليه ومشاركته أثناء التواصل التجاري.</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 04 — SERVICE 3: PAID ADVERTISING CAMPAIGNS                                -->
+        <!-- ========================================================================= -->
+        <section id="ads" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-copper/20 text-amber-300 font-black text-xs border border-ind-copper/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullhorn text-[11px]"></i>
+                    <span>سادساً • الخدمة الثالثة</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-bullseye text-ind-copper text-xl"></i>
+                    <span>إدارة الحملات الإعلانية — الوصول إلى العملاء المحتملين والجهات التجارية</span>
+                </h2>
+            </div>
+
+            <div class="web-card-amber rounded-3xl p-6 sm:p-10 space-y-8 border-2 border-ind-copper/40 shadow-web-card">
+                <p class="text-base sm:text-lg text-slate-200 leading-relaxed font-medium">
+                    تُمثل الحملات الإعلانية الموجهة المحرك الذي ينقل <strong>شركة المهند العربي للصناعة</strong> من مرحلة الظهور المحدود في دائرة المعارف الحالية إلى الوصول المنظم والسريع إلى شرائح واسعة من صناع القرار والشركات الباحثة عن منتجات وحلول صناعية.
+                </p>
+
+                <!-- 7 Steps Workflow & Target Audience -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                    <!-- 7 Steps -->
+                    <div class="lg:col-span-7 p-6 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-copper/30 space-y-3">
+                        <h4 class="text-sm font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-list-check text-ind-copper"></i>
+                            <span>آلية العمل في إدارة الحملات الإعلانية (7 خطوات):</span>
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-300">
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>1.</strong> دراسة طبيعة النشاط والمنتجات الصناعية.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>2.</strong> تحديد الشرائح المستهدفة من العملاء.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>3.</strong> اختيار المنصات الإعلانية المناسبة للنشاط.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>4.</strong> تجهيز المواد الإعلانية والمحتوى المقنع.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>5.</strong> إطلاق الحملات الإعلانية وفق أهداف محددة.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5"><strong>6.</strong> متابعة الأداء وتحليل النتائج ومعدلات التفاعل.</div>
+                            <div class="p-2.5 rounded-xl bg-black/40 border border-white/5 sm:col-span-2"><strong>7.</strong> التحسين المستمر للاستهداف والمواد الإعلانية بناءً على البيانات.</div>
+                        </div>
+                    </div>
+
+                    <!-- B2B Target Segments -->
+                    <div class="lg:col-span-5 p-6 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/30 space-y-3">
+                        <h4 class="text-sm font-black text-white flex items-center gap-2">
+                            <i class="fa-solid fa-users-viewfinder text-ind-steel"></i>
+                            <span>الجهات والشرائح التي تستهدفها الحملات:</span>
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-200">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-building text-ind-copper"></i> <span>الشركات والمؤسسات التجارية.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-industry text-ind-copper"></i> <span>المصانع والمنشآت الصناعية.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-helmet-safety text-ind-copper"></i> <span>أصحاب المشاريع والمقاولون.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-user-tie text-ind-copper"></i> <span>مسؤولو المشتريات والتوريد وسلاسل الإمداد.</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-magnifying-glass text-ind-copper"></i> <span>الجهات التي تبحث عن المنتجات والحلول الصناعية.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Benefits + Ad Spend Clarification -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <div class="p-4 rounded-2xl bg-black/50 border border-white/10 text-xs text-slate-300 space-y-1.5">
+                        <span class="font-bold text-amber-300 block">الفوائد المباشرة للحملات الإعلانية:</span>
+                        <p>الوصول لعملاء جدد خارج العلاقات الحالية، زيادة التعريف بالمنتجات، جذب استفسارات وفرص تجارية جديدة، ومساندة فريق المبيعات بفرص تواصل إضافية.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-rose-950/40 border border-rose-500/40 text-xs text-rose-100 space-y-1.5">
+                        <span class="font-bold text-white flex items-center gap-1.5"><i class="fa-solid fa-circle-info text-rose-400"></i> إيضاح تنظيمي بشأن الميزانية الإعلانية:</span>
+                        <p>الميزانية الإعلانية المدفوعة للمنصات (Ad Spend) تُحدد بشكل منفصل عن أتعاب إدارة الحملات، وفقاً لأهداف الشركة وحجم الانتشار المطلوب، ولا تُعتبر مشمولة تلقائياً ضمن أتعاب الإدارة.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 05 — SERVICE 4: OUTSOURCED SALES TEAM (CORE COMMERCIAL PILLAR)            -->
+        <!-- ========================================================================= -->
+        <section id="sales" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-emerald/20 text-ind-emerald font-black text-xs border border-ind-emerald/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-star text-[11px]"></i>
+                    <span>سابعاً • الركيزة التجارية الأهم</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-users-gear text-ind-emerald text-xl"></i>
+                    <span>فريق المبيعات الخارجي — تحويل الحضور والفرص إلى اجتماعات وتعاقدات</span>
+                </h2>
+            </div>
+
+            <div class="relative overflow-hidden rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-kaaf-blueDeep via-kaaf-darkSlate to-kaaf-cardBg border-2 border-ind-emerald shadow-glow-green space-y-8">
+                <div class="industrial-ribbon absolute top-0 left-0 right-0"></div>
+
+                <div class="max-w-4xl space-y-3">
+                    <span class="px-3 py-1 rounded-full bg-ind-emerald/20 text-ind-emerald text-xs font-black border border-ind-emerald/40 inline-flex items-center gap-1.5">
+                        <i class="fa-solid fa-handshake"></i> امتداد تجاري مباشر لشركة المهند العربي للصناعة
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-black text-white font-ibm">
+                        الحضور الرقمي يفتح الباب.. وفريق المبيعات يحسم الفرص ويحولها إلى عقود
+                    </h3>
+                    <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
+                        إن امتلاك موقع إلكتروني وحسابات وحملات إعلانية خطوة تأسيسية لا غنى عنها، ولكنها <strong>لا تكفي وحدها لتحقيق النمو التجاري المستهدف في القطاع الصناعي</strong>؛ بل تحتاج الشركة إلى فريق مبيعات متخصص يتولى التواصل المباشر مع المصانع والشركات، وفهم احتياجاتها، ومتابعة الفرص بانتظام باعتباره <strong>امتداداً تجارياً رسمياً لشركة المهند العربي للصناعة</strong>.
+                    </p>
+                </div>
+
+                <!-- 4 Operational Phases of Sales Team -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 text-xs">
+
+                    <!-- Phase 1 -->
+                    <div class="p-5 rounded-2xl bg-black/65 border border-ind-steel/40 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-mono font-bold text-ind-steel px-2.5 py-0.5 rounded-full bg-kaaf-blue/40">المرحلة 01</span>
+                            <h4 class="text-sm font-black text-white">1. بناء قاعدة بيانات العملاء</h4>
+                            <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                                <li>• تحديد الشركات والجهات المناسبة لنشاط المهند العربي للصناعة.</li>
+                                <li>• البحث عن أصحاب القرار ومسؤولي المشتريات والتوريد.</li>
+                                <li>• تجهيز وتنظيم وتصنيف بيانات العملاء المحتملين بدقة.</li>
+                            </ul>
+                        </div>
+                        <div class="text-[10px] text-ind-steel font-mono pt-2 border-t border-white/10">Prospect Database</div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="p-5 rounded-2xl bg-black/65 border border-ind-copper/40 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-mono font-bold text-amber-300 px-2.5 py-0.5 rounded-full bg-amber-950/60">المرحلة 02</span>
+                            <h4 class="text-sm font-black text-white">2. التواصل التجاري المباشر</h4>
+                            <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                                <li>• إجراء مكالمات تعريفية احترافية بالشركة وقدراتها.</li>
+                                <li>• تقديم النشاط والمنتجات والحلول الصناعية بوضوح.</li>
+                                <li>• التواصل المباشر مع أصحاب القرار واستخدام القنوات الرسمية للمتابعة.</li>
+                            </ul>
+                        </div>
+                        <div class="text-[10px] text-amber-300 font-mono pt-2 border-t border-white/10">Direct B2B Outreach</div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="p-5 rounded-2xl bg-black/65 border border-kaaf-purpleLight/40 space-y-3 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-mono font-bold text-kaaf-purpleLight px-2.5 py-0.5 rounded-full bg-kaaf-purple/30">المرحلة 03</span>
+                            <h4 class="text-sm font-black text-white">3. المتابعة وإدارة الفرص</h4>
+                            <ul class="space-y-1.5 text-slate-300 leading-relaxed">
+                                <li>• متابعة العملاء المهتمين بصورة دورية ومبرمجة.</li>
+                                <li>• توثيق الملاحظات والاحتياجات الفنية والتجارية.</li>
+                                <li>• متابعة فرص التعاون والتوريد وترتيب الاجتماعات التجارية مع الإدارة.</li>
+                            </ul>
+                        </div>
+                        <div class="text-[10px] text-kaaf-purpleLight font-mono pt-2 border-t border-white/10">Opportunity Management</div>
+                    </div>
+
+                    <!-- Phase 4 -->
+                    <div class="p-5 rounded-2xl bg-black/65 border border-ind-emerald/50 space-y-3 flex flex-col justify-between bg-emerald-950/20">
+                        <div class="space-y-2">
+                            <span class="text-[11px] font-mono font-bold text-ind-emerald px-2.5 py-0.5 rounded-full bg-emerald-950">المرحلة 04</span>
+                            <h4 class="text-sm font-black text-white">4. تحويل الفرص إلى تعاقدات</h4>
+                            <ul class="space-y-1.5 text-slate-200 leading-relaxed">
+                                <li>• تأهيل العملاء المحتملين وتحديد متطلباتهم بدقة.</li>
+                                <li>• نقل الفرص الجادة والناضجة إلى إدارة الشركة.</li>
+                                <li>• متابعة مراحل التفاوض والتعاقد بالتنسيق المستمر مع الإدارة.</li>
+                            </ul>
+                        </div>
+                        <div class="text-[10px] text-ind-emerald font-mono pt-2 border-t border-white/10">Closing Support</div>
+                    </div>
+
+                </div>
+
+                <!-- 6 Direct Benefits for the Company -->
+                <div class="p-5 rounded-2xl bg-black/60 border border-white/10 space-y-3">
+                    <span class="text-xs font-bold text-ind-emerald block">كيف ستستفيد إدارة شركة المهند العربي للصناعة من فريق المبيعات؟</span>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-slate-200">
+                        <div>✓ الوصول المستمر إلى شركات وعملاء صناعيين وتجاريين جدد.</div>
+                        <div>✓ بناء قاعدة بيانات تجارية منظمة وقابلة للتطوير المستقبلي.</div>
+                        <div>✓ تخفيف العبء اليومي للتواصل والبحث عن العملاء عن إدارة الشركة.</div>
+                        <div>✓ فتح قنوات جديدة للتعاون وعقود التوريد المستدامة.</div>
+                        <div>✓ زيادة فرص عقد الاجتماعات التجارية الجادة مع صناع القرار.</div>
+                        <div>✓ وجود متابعة منظمة ودقيقة تمنع ضياع أو تسرب أي فرصة بيعية.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 06 — ECOSYSTEM SYNERGY & CUSTOMER JOURNEY DIAGRAM                         -->
+        <!-- ========================================================================= -->
+        <section id="synergy" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-steel/20 text-ind-steel font-black text-xs border border-ind-steel/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-arrows-spin text-[11px]"></i>
+                    <span>ثامناً • تكامل المنظومة</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-cubes-stacked text-ind-steel text-xl"></i>
+                    <span>التكامل بين الخدمات الأربع — منظومة نمو صناعي موحدة</span>
+                </h2>
+            </div>
+
+            <div class="web-card-blue rounded-3xl p-6 sm:p-10 space-y-8 border-2 border-ind-steel/40 shadow-web-card">
+                <!-- 4 Pillars Roles -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center text-xs">
+                    <div class="p-5 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-steel/40 space-y-2">
+                        <i class="fa-solid fa-globe text-ind-steel text-2xl"></i>
+                        <h4 class="font-black text-white text-sm">1. الموقع الإلكتروني</h4>
+                        <p class="text-slate-300 leading-relaxed">يمنح الشركة واجهة رسمية ومصدراً موثوقاً للمعلومات والثقة.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-kaaf-darkSlate/95 border border-kaaf-purpleLight/40 space-y-2">
+                        <i class="fa-solid fa-hashtag text-kaaf-purpleLight text-2xl"></i>
+                        <h4 class="font-black text-white text-sm">2. السوشيال ميديا</h4>
+                        <p class="text-slate-300 leading-relaxed">تبني الوعي بالعلامة وتستعرض نشاط الشركة وقدراتها باستمرار.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-copper/40 space-y-2">
+                        <i class="fa-solid fa-bullhorn text-ind-copper text-2xl"></i>
+                        <h4 class="font-black text-white text-sm">3. الحملات الإعلانية</h4>
+                        <p class="text-slate-300 leading-relaxed">تساعد على الوصول السريع لشرائح جديدة من العملاء المحتملين.</p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl bg-kaaf-darkSlate/95 border border-ind-emerald/40 space-y-2">
+                        <i class="fa-solid fa-users-gear text-ind-emerald text-2xl"></i>
+                        <h4 class="font-black text-white text-sm">4. فريق المبيعات</h4>
+                        <p class="text-slate-300 leading-relaxed">يتولى التواصل المباشر والمتابعة وتحويل الفرص لاجتماعات وتعاقدات.</p>
+                    </div>
+                </div>
+
+                <!-- 7-Step Visual Customer Journey -->
+                <div class="p-6 rounded-2xl bg-black/75 border border-ind-steel/30 space-y-4">
+                    <span class="text-xs font-bold text-amber-300 block text-center">المسار البصري لرحلة العميل داخل منظومة المهند العربي للصناعة:</span>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2.5 text-center text-xs">
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-white/10 space-y-1">
+                            <span class="text-ind-steel font-mono font-bold block">01</span>
+                            <p class="text-[11px] text-white font-bold">ظهور الشركة أمام العميل</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-white/10 space-y-1">
+                            <span class="text-ind-steel font-mono font-bold block">02</span>
+                            <p class="text-[11px] text-white font-bold">التعرف على نشاطها الصناعي</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-white/10 space-y-1">
+                            <span class="text-ind-steel font-mono font-bold block">03</span>
+                            <p class="text-[11px] text-white font-bold">زيارة موقعها وحساباتها</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-ind-copper/40 space-y-1">
+                            <span class="text-ind-copper font-mono font-bold block">04</span>
+                            <p class="text-[11px] text-white font-bold">استفسار أو تواصل المبيعات</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-white/10 space-y-1">
+                            <span class="text-ind-steel font-mono font-bold block">05</span>
+                            <p class="text-[11px] text-white font-bold">المتابعة التجارية المنظمة</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-white/10 space-y-1">
+                            <span class="text-ind-steel font-mono font-bold block">06</span>
+                            <p class="text-[11px] text-white font-bold">الاجتماع والتفاوض الفني</p>
+                        </div>
+                        <div class="p-3 rounded-xl bg-kaaf-darkSlate border border-ind-emerald/50 space-y-1 bg-emerald-950/25 col-span-2 sm:col-span-1">
+                            <span class="text-ind-emerald font-mono font-bold block">07</span>
+                            <p class="text-[11px] text-emerald-300 font-bold">فرصة التعاقد والتوريد</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 07 — FUTURE VISION: TARGETED OUTCOMES                                     -->
+        <!-- ========================================================================= -->
+        <section id="vision" class="space-y-6">
+            <div class="flex items-center gap-3">
+                <span class="px-3 py-1 rounded-full bg-ind-emerald/20 text-ind-emerald font-black text-xs border border-ind-emerald/40 flex items-center gap-1.5">
+                    <i class="fa-solid fa-eye text-[11px]"></i>
+                    <span>تاسعاً • الرؤية المستقبلية</span>
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-black text-white tracking-wide flex items-center gap-2.5">
+                    <i class="fa-solid fa-chart-line-up text-ind-emerald text-xl"></i>
+                    <span>الرؤية المستقبلية — الأثر الاستراتيجي المستهدف من تطبيق المنظومة</span>
+                </h2>
+            </div>
+
+            <div class="web-card-green rounded-3xl p-6 sm:p-10 space-y-6 border-2 border-ind-emerald/40 shadow-web-card">
+                <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
+                    بتكامل هذه المسارات الأربعة، تنتقل <strong>شركة المهند العربي للصناعة</strong> إلى مرحلة جديدة من النضج المؤسسي والتجاري تحقق لها:
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-globe text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">تأسيس وجود رقمي رسمي ومستقل للشركة.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-award text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">بناء صورة ذهنية احترافية وقوية في السوق.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-industry text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">تسهيل عرض المنتجات والخدمات الصناعية.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-tower-broadcast text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">تطوير وتنويع قنوات الوصول إلى العملاء.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-database text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">بناء قاعدة بيانات تجارية دائمة للشركة.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3">
+                        <i class="fa-solid fa-clock-rotate-left text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">تنظيم عمليات التواصل والمتابعة الدورية.</span>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-black/45 border border-ind-emerald/30 flex items-center gap-3 sm:col-span-2">
+                        <i class="fa-solid fa-handshake text-ind-emerald text-lg"></i>
+                        <span class="font-bold text-white">دعم نمو الفرص التجارية وعقود التوريد على المدى الطويل.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================================================= -->
+        <!-- 08 — CONCLUSION & CALL TO ACTION                                          -->
+        <!-- ========================================================================= -->
+        <section id="conclusion" class="relative rounded-[32px] overflow-hidden p-8 sm:p-14 bg-gradient-to-br from-kaaf-blueDeep via-kaaf-darkSlate to-kaaf-dark border border-ind-steel/40 text-center space-y-8 shadow-web-card">
+            <div class="industrial-ribbon absolute top-0 left-0 right-0"></div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden border-2 border-ind-steel shadow-glow-blue mx-auto p-0.5 bg-black">
+                    <img src="https://i.ibb.co/qLQcG9vr/Whats-App-Image-2026-08-26-at-11-29-58.jpg" alt="KAAF Group Logo" class="w-full h-full object-cover rounded-xl" onerror="this.src='https://placehold.co/100x100/0A4C86/ffffff?text=KAAF'">
+                </div>
+
+                <span class="text-xs font-bold text-ind-steel font-mono uppercase tracking-widest block">KAAF Group × شركة المهند العربي للصناعة • Strategic Partnership</span>
+
+                <h3 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                    خاتمة العرض والدعوة إلى بناء الشراكة
+                </h3>
+
+                <p class="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
+                    «إن تأسيس الحضور الرقمي والتجاري لـ <strong>شركة المهند العربي للصناعة</strong> ليس مجرد خطوة تسويقية، بل هو استثمار حقيقي في بناء بنية متكاملة تساعد الشركة على الظهور بصورة تليق بنشاطها الصناعي، والوصول إلى أسواق وعملاء جدد، وتطوير آلية التواصل التجاري وتحويل الفرص إلى علاقات عمل مستمرة».
+                </p>
+
+                <div class="pt-2 text-lg sm:text-xl font-black text-transparent bg-clip-text bg-gradient-to-r from-ind-steel via-sky-200 to-ind-copper font-ibm">
+                    KAAF Group – شريككم في بناء الحضور الرقمي وتطوير النمو التجاري.
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/966537553910" target="_blank" class="px-8 py-3.5 rounded-2xl bg-gradient-to-r from-kaaf-blue via-ind-steel to-ind-copper text-slate-950 font-black text-xs shadow-xl flex items-center gap-2 hover:brightness-110 transition">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>مناقشة التفاصيل الفنية واعتماد خطة التأسيس</span>
+                </a>
+                <a href="https://kaafmarketing.sa/" target="_blank" class="px-6 py-3.5 rounded-2xl bg-kaaf-dark border border-kaaf-border text-white font-bold text-xs hover:border-ind-steel transition flex items-center gap-2">
+                    <i class="fa-solid fa-globe text-ind-steel"></i>
+                    <span>الموقع الرسمي: kaafmarketing.sa</span>
+                </a>
+            </div>
+
+            <!-- Formal Signatures Box -->
+            <div class="pt-8 border-t border-white/10 grid grid-cols-1 md:grid-cols-2 gap-6 text-right text-xs text-slate-400">
+                <div class="space-y-1">
+                    <span class="text-white font-bold block text-sm">مقدم العرض:</span>
+                    <p class="text-slate-200 font-bold">KAAF Group for Marketing, Software & Media Solutions</p>
+                    <p>مجموعة كاف لحلول التسويق والبرمجيات والحلول الإعلامية</p>
+                    <p class="font-mono text-slate-500">المملكة العربية السعودية • الرياض</p>
+                </div>
+                <div class="space-y-1 md:text-left">
+                    <span class="text-white font-bold block text-sm">الموجه إليه العرض:</span>
+                    <p class="text-slate-200 font-bold">شركة المهند العربي للصناعة</p>
+                    <p>الاسم والصفة: ................................................................</p>
+                    <p>التوقيع والاعتماد: ................................................</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Ambient Canvas Script -->
+    <script>
+        (function() {
+            const canvas = document.getElementById('interactive-bg-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height;
+            let particles = [];
+            const particleCount = 40;
+            const colors = ['#0A4C86', '#38BDF8', '#F59E0B', '#10B981', '#94A3B8'];
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.65;
+                    this.vy = (Math.random() - 0.5) * 0.65;
+                    this.radius = Math.random() * 2 + 1;
+                    this.color = colors[Math.floor(Math.random() * colors.length)];
+                    this.alpha = Math.random() * 0.35 + 0.2;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                resize();
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function connect() {
+                const maxDist = 130;
+                for (let a = 0; a < particles.length; a++) {
+                    for (let b = a + 1; b < particles.length; b++) {
+                        let dx = particles[a].x - particles[b].x;
+                        let dy = particles[a].y - particles[b].y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < maxDist) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[a].x, particles[a].y);
+                            ctx.lineTo(particles[b].x, particles[b].y);
+                            ctx.strokeStyle = '#38BDF8';
+                            ctx.globalAlpha = (1 - (dist / maxDist)) * 0.2;
+                            ctx.lineWidth = 1;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                ctx.globalAlpha = 1;
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                }
+                connect();
+                requestAnimationFrame(animate);
+            }
+
+            window.onload = function() {
+                init();
+                animate();
+            };
+        })();
+    </script>
+</body>
+</html>
